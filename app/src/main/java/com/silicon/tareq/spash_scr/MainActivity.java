@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //todo: Write the codes below
         l1=(ConstraintLayout) findViewById(R.id.top_part);
         upToDown= AnimationUtils.loadAnimation(this,R.anim.uptodown);
         l1.setAnimation(upToDown);
