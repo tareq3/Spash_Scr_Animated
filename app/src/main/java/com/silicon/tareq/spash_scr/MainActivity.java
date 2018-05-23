@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        l1=(ConstraintLayout) findViewById(R.id.constrain_Layout1);
+        l1=(ConstraintLayout) findViewById(R.id.top_part);
         upToDown= AnimationUtils.loadAnimation(this,R.anim.uptodown);
         l1.setAnimation(upToDown);
 
-        l2=(ConstraintLayout) findViewById(R.id.constrain_Layout2);
+        l2=(ConstraintLayout) findViewById(R.id.bottom_part);
         downToUP=AnimationUtils.loadAnimation(this, R.anim.downtoup);
         l2.setAnimation(downToUP);
 
