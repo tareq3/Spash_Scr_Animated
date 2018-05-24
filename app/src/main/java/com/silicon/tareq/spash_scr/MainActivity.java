@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-//Added tag control to this project
+//Branch_01
 public class MainActivity extends AppCompatActivity {
 
 
