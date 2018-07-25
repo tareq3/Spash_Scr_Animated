@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="lightOorangle">#fdf2df</color>
     <color name="lightDarkOrange">#ebd6ab</color>
+
+    <color name="slide_bg_1">#009688</color>
+    <color name="slide_bg_2">#409D9B</color>
+    <color name="slide_bg_3">#00bfa5</color>
+
 </resources>
