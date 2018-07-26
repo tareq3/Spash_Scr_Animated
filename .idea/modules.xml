@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spash_Scr.iml" filepath="$PROJECT_DIR$/Spash_Scr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Spash_Scr_Animated.iml" filepath="$PROJECT_DIR$/.idea/Spash_Scr_Animated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
