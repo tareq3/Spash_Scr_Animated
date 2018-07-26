@@ -21,9 +21,6 @@
             </intent-filter>
         </activity>  <activity android:name=".Launcher_Splash.Launcher_Extender" android:theme="@style/Launcher"/>
 
-        <activity android:name=".Launcher_Splash.SplashActivity" />
-
-
 
         <activity android:name=".Launcher_Splash.IntoActivity.IntroActivity" android:label="@string/app_name" />
 

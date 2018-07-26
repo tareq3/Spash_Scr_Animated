@@ -7,11 +7,14 @@
 package com.silicon.tareq.spash_scr.Launcher_Splash;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.silicon.tareq.spash_scr.Launcher_Splash.IntoActivity.IntroActivity;
 import com.silicon.tareq.spash_scr.MainActivity;
 import com.silicon.tareq.spash_scr.R;
 
@@ -55,9 +58,25 @@ public class Launcher_Extender extends AppCompatActivity {
 
     private void launch() {
         if (!isFinishing()) {
-            startActivity(new Intent(this, SplashActivity.class)); //Here set the next activity
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            finish();
+
+            //Shared pref for storing data for AppLifeTime
+            final SharedPreferences sharedPreferences =    PreferenceManager.getDefaultSharedPreferences(this);
+
+            // Check if we need to display our OnboardingFragment
+            if (!sharedPreferences.getBoolean(
+                    "virgin", false)) {
+
+                startActivity(new Intent(this, IntroActivity.class)); //Here set the next activity
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+
+            }else {
+
+                startActivity(new Intent(this, MainActivity.class)); //Here set the next activity
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+
         }
     }
 
