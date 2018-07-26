@@ -20,6 +20,8 @@ import android.support.v7.app.AppCompatActivity;
 /***
  * Created by Tareq on 25,July,2018.
  */
+
+//Please change the color from color resource
 public class LauncherActivity extends AppCompatActivity {
 
     @Override
@@ -28,11 +30,11 @@ public class LauncherActivity extends AppCompatActivity {
 
         //Todo!:1st way easy one:  Start Activity
         /*From launcher we can even start MainActivity without any transiction anim*/
-        startActivity(new Intent(this,MainActivity.class));
-        finish();
+       // startActivity(new Intent(this,MainActivity.class));
+       // finish();
 
         //Todo: 2nd way reomended one: Using a Launcher_Extender Activity that extends launcer icon preiod with anim transiction
-      //  startActivity(new Intent(this,Launcher_Extender.class));
-       // finish();
+        startActivity(new Intent(this,Launcher_Extender.class));
+        finish();
     }
 }

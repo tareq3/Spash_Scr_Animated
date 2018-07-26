@@ -19,8 +19,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
+        </activity>  <activity android:name=".Launcher_Extender" android:theme="@style/Launcher"/>
 
         <activity android:name=".MainActivity"></activity>
     </application>
