@@ -63,22 +63,36 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
 
 
                     // Check if we need to display our OnboardingFragment
                     if (!sharedPreferences.getBoolean(
                             "virgin", false)) {
-                        // The user hasn't seen the OnboardingFragment yet, so show it
-                        startActivity(intentIntro,
-                                ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            // The user hasn't seen the OnboardingFragment yet, so show it
+                            startActivity(intentIntro,
+                                    ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+                            finish();
+                        }else {
+                            startActivity(intentIntro);
+                            finish();
+                        }
                     }else {
 
-                        startActivity(intentFirst,
-                                ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                // The user hasn't seen the OnboardingFragment yet, so show it
+                                startActivity(intentFirst,
+                                        ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+                                finish();
+                            }else {
+                                startActivity(intentFirst);
+                                finish();
+                            }
                     }
                 }
-            }
+
         }, 3500); //3.5 sec loading time fake
 
 
