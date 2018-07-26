@@ -1,5 +1,11 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Tareq Islam on 7/25/18 3:25 PM
+  ~
+  ~  Last modified 7/25/18 3:25 PM
+  -->
 
+<resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -9,4 +15,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    This theme used in both activity Launcher and Launcher_Extender as well.
+    <style name="Launcher" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/background</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+    </style>
 </resources>
