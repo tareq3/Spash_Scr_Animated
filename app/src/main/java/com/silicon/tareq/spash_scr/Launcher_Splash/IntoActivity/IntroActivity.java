@@ -1,4 +1,4 @@
-package com.silicon.tareq.spash_scr;
+package com.silicon.tareq.spash_scr.Launcher_Splash.IntoActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
+import com.silicon.tareq.spash_scr.MainActivity;
+import com.silicon.tareq.spash_scr.R;
 
 /***
  * Created by Tareq on 25,July,2018.
@@ -33,13 +35,13 @@ public class IntroActivity extends AppIntro {
 
 
        // addSlide(SampleSlide.newInstance(R.layout.slide_1));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            addSlide(AppIntroFragment.newInstance("Notification","I can set notification for you.",R.drawable.androidnotification,getColor(R.color.slide_bg_1)));
-            addSlide(AppIntroFragment.newInstance("Alarm","I can set alarm for you ",R.drawable.alarm_slide2,getColor(R.color.slide_bg_2)));
-            addSlide(AppIntroFragment.newInstance( "Notification And alarm slide", "I can set both by a Single tap.",R.drawable.ic_done_white,getColor(R.color.slide_bg_3)));
-        }
 
-        setFlowAnimation();
+            addSlide(AppIntroFragment.newInstance("Notification","I can set notification for you.",R.drawable.androidnotification,getResources().getColor(R.color.slide_bg_1)));
+            addSlide(AppIntroFragment.newInstance("Alarm","I can set alarm for you ",R.drawable.alarm_slide2,getResources().getColor(R.color.slide_bg_2)));
+            addSlide(AppIntroFragment.newInstance( "Notification And alarm slide", "I can set both by a Single tap.",R.drawable.ic_done_white,getResources().getColor(R.color.slide_bg_3)));
+
+
+
 /*
         // Hide Skip/Done button.
         showSkipButton(false);
@@ -59,19 +61,17 @@ public class IntroActivity extends AppIntro {
         super.onDonePressed(currentFragment);
 
         //Todo!1: Change pref value to true so it doesn't play again
-      /*  SharedPreferences.Editor sharedPreferencesEditor =
+       SharedPreferences.Editor sharedPreferencesEditor =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
         sharedPreferencesEditor.putBoolean("virgin", true);
-        sharedPreferencesEditor.apply();*/
+        sharedPreferencesEditor.apply();
 
         //Todo!2: start First Activity
         //First Activity
-        final Intent intentFirst=new Intent(this,FirstActivity.class);
+            Intent intentFirst=new Intent(this,MainActivity.class);
+            startActivity(intentFirst);
+            finish();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            startActivity(intentFirst,
-                    ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-        }
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.silicon.tareq.spash_scr;
+package com.silicon.tareq.spash_scr.Launcher_Splash.IntoActivity;
 
 
 import android.os.Bundle;

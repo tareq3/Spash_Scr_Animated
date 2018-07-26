@@ -1,4 +1,4 @@
-package com.silicon.tareq.spash_scr;
+package com.silicon.tareq.spash_scr.Launcher_Splash;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -10,8 +10,14 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.AutoTransition;
+import android.transition.Fade;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+
+import com.silicon.tareq.spash_scr.MainActivity;
+import com.silicon.tareq.spash_scr.Launcher_Splash.IntoActivity.*;
+import com.silicon.tareq.spash_scr.R;
 
 import io.supercharge.shimmerlayout.ShimmerLayout;
 
@@ -27,10 +33,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-     // set an exit transition
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setExitTransition(new AutoTransition());
-        }
+
         setContentView(R.layout.activity_splash);
 
         //Shimmer effect for text
@@ -38,20 +41,21 @@ public class SplashActivity extends AppCompatActivity {
         shimmerText.startShimmerAnimation();
 
         //todo: initial transition animation
-        l1=(ConstraintLayout) findViewById(R.id.top_part);
-        upToDown= AnimationUtils.loadAnimation(this,R.anim.uptodown);
-        l1.setAnimation(upToDown);
 
-        l2=(ConstraintLayout) findViewById(R.id.bottom_part);
-        downToUP=AnimationUtils.loadAnimation(this, R.anim.downtoup);
-        l2.setAnimation(downToUP);
+            l1 = (ConstraintLayout) findViewById(R.id.top_part);
+            upToDown = AnimationUtils.loadAnimation(this, R.anim.uptodown);
+            l1.setAnimation(upToDown);
+
+            l2 = (ConstraintLayout) findViewById(R.id.bottom_part);
+            downToUP = AnimationUtils.loadAnimation(this, R.anim.downtoup);
+            l2.setAnimation(downToUP);
 
 
         //Intro Activity which will be played only single time on a device
         final Intent intentIntro=new Intent(this,IntroActivity.class);
 
         //First Activity
-       final Intent intentFirst=new Intent(this,FirstActivity.class);
+       final Intent intentFirst=new Intent(this,MainActivity.class);
 
 
        //Shared pref for storing data for AppLifeTime
@@ -63,22 +67,22 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
 
                     // Check if we need to display our OnboardingFragment
                     if (!sharedPreferences.getBoolean(
                             "virgin", false)) {
-                        // The user hasn't seen the OnboardingFragment yet, so show it
-                        startActivity(intentIntro,
-                                ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+
+                            startActivity(intentIntro);
+                                finish();
+
                     }else {
 
-                        startActivity(intentFirst,
-                                ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
+                            startActivity(intentFirst);
+                                finish();
                     }
                 }
-            }
+
         }, 3500); //3.5 sec loading time fake
 
 

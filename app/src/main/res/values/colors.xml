@@ -3,6 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#273833</color>
     <color name="colorAccent">#FF4081</color>
+
+
+
+
+
+
+
+
+
+
+    <!--Custom Colors Start from here-->
+    <color name="launcher_background">#FFFFFF</color>
+
+
+
     <color name="lightOorangle">#fdf2df</color>
     <color name="lightDarkOrange">#ebd6ab</color>
 
